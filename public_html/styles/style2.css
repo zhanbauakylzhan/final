@@ -1,0 +1,84 @@
+body{
+	background:rgba(105,105,105,0.7);
+        background-size:100%;
+}
+
+#main_coin{
+	width: 1200px;
+	height: 580px;
+	border-radius: 10px;
+	margin:0px auto;
+	margin-top: 10px;
+}
+#registration{
+	width: 400px;
+        margin-top:45px;
+	padding-bottom: 30px;
+	background-color: rgba(255,255,255,0.7);
+	text-align: center;
+        border-radius:20px;
+}
+#registration ul li {
+	list-style: none;
+	float:left;
+	width: 160px;
+	margin-right: 2px;
+	padding-top:2px;
+	cursor: pointer;
+	height: 34px;
+	color:black;
+        font-family: Tahoma;
+	text-align: center;
+	font-size: 20px;
+	background-color: rgba(100,100,100,0.6);
+}
+#pole_reg{
+	margin-top: 25px;
+}
+label{
+	font-size: 20px;
+}
+#pole_reg .get_it{
+	text-align: center;
+	font-size: 26px;
+	font-weight: bolder;
+	width: 320px;
+	height: 35px;
+}
+#clisk{
+	width: 100px;
+	height: 40px;
+	margin-top: 20px;
+}
+#new_pole{
+	width: 350px;
+	height: 250px;
+	display: none;
+}
+#top_lop{
+	margin-left: 50px;
+	height: 85px;
+	padding:5px;
+}
+#top_lop ul li{
+	list-style: none;
+	float:left;
+	margin-left:50px;
+	margin-top: 10px;
+	font-size: 13px;
+	letter-spacing: 1px;
+	line-height: 34px;
+	text-transform: uppercase;
+	font-family: "DIN Next W01";
+	font-weight: bolder;
+	}
+#top_lop ul li div span{
+	box-shadow: 0px 1px 2px rgba(255,255,255,0.8);
+}
+
+#top_lop ul li div{
+	margin-top: 10px;
+}
+#top_lop ul li:hover{
+	color:rgba(255,255,255,0.7);
+}		
