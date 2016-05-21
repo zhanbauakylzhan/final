@@ -1,0 +1,88 @@
+<?php 
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Connection People in MuzZone. <?= $_SESSION['login'];?></title>
+	<link rel="stylesheet" type="text/css" href="styles/style1.css">
+        <link rel="shortcut icon" href="../imag/favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src='scripts/jquery-2.1.4.min.js'></script>
+	<script type="text/javascript" src='scripts/jsq2.js'></script>
+</head>
+<body>
+	<div id='opacity_all'>
+		<div id='center_in'>
+
+		</div>
+	</div>
+	<div id='all_contents'>
+		<div id="top_contain">
+			<div>
+				<?php
+				printf("<a href='?name=%s'><img src='%s' width='70px'  height='70px'></a>",$_SESSION['login'],$_SESSION['photo']);
+				?>
+			</div>
+			<div style="margin-top:-45px; margin-left:80px;">
+				<a href="index.php"><header><?php 
+				echo "@".$_SESSION['login'];
+				?></header></a>
+				<br>
+				<form action="" method="post">
+				<input type='submit' style="margin-top:-50px; margin-left:10px;" name='kets' value='Log Out'>
+				</form>
+				<?php
+				if($_POST['kets']==true){
+					unset($_SESSION['login']);
+					unset($_SESSION['photo']);
+                                        header("Refresh:0;url=index.php");
+				}
+				?>
+			</div>
+		</div>
+		<div id='under_line'>
+			<center>
+				<input type='hidden' value="<?php echo $_SESSION['login'];?>" id='happs'>
+				<button id='new_file'>New file</button>
+				<input type='hidden' value='0' id='counter_file'>
+			</center>
+			<div id="new_add_files">
+				<div id='top_files'>
+				</div>
+                                <br>
+				<span id='shit'></span>
+				<?php
+					include_once 'controller/common_class.php';
+					$a = new Users_in(2);
+					echo "<br>";
+				?>
+
+			</div>
+		</div>
+		<div id='code_contents'>
+			<?php 
+			if($_GET['name']==""){
+				if($_GET['messages']==""){
+				$b = new Users_in(6);					
+				}else{
+					include_once 'models/database_user_info.php';
+					echo "<div id='messages'>";
+					show_messages();			
+					echo "</div>";
+				}
+			}
+			else{
+				include_once 'models/database_user_info.php';
+				echo "<div id='user_info'>";
+				show_admin($_GET['name']);
+				echo "</div>";
+				echo "<div id='news_current'>";
+				show_admin_news($_GET['name']);
+				echo "</div>";
+			}
+			?>
+		</div>
+		<input type='hidden' id='shlow_po' value='no'>
+</div>
+</body>
+</html>	

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style>
+
+.sdsa input{
+width:295px;
+height:24px;
+font-size:15px;
+margin-bottom:5px;
+text-align:center;
+font-family:Padauk Book;
+border:2px solid whitesmoke;
+border-radius:30px;
+}
+.sdsa select{
+width:95px;
+height:24px;
+border-radius:20px;
+text-align:center;
+padding-left:20px;
+font-family:Padauk Book;
+font-size:15px;
+background-color:white;
+color:rgba(0,0,0,0.6);
+}
+</style>
+</head>
+<body>
+	<form action='' method="post" enctype="multipart/form-data" id="fileform" onsubmit="return check_all_function();">
+		<div id='full_time' style="width:600px; font-size:19px; font-family:'neou',sans-serif;">
+                        <div style='float:right; margin-right:90px;margin-top:15px;'><img src='imag/man.jpg' id='default_picture' width="180px" height="250px">
+					<input type='hidden' id='picture_id' name='pic_id' value="none"></div>
+<div class='sdsa' style='float:left; margin-left:-115px;width:390px; height:500px; text-align:center;'>
+						<input type='text' style='margin-top:15px;' placeholder='Nickname' name="nick_in"><br>
+						<input type='text' placeholder='First Name' id='name_in' name='name_in'>
+						<input type='hidden' id='name_ch' value='nope'>
+						<input type='text' placeholder='Last Name' id='sur_in' name='sur_in'>
+						<input type='hidden' id='sur_ch' value='nope'>
+						<input type='email' placeholder='Email' name="mail_in" id='mail_in'><br>
+						<input type='password' placeholder='Password' id='pass_in' name="pass_in"><br>
+						<input type='hidden' id='pass_ch' value='nope'>
+						<select id='date_d' name="date_id">
+							<option>Day</option>
+							<option value='1'>1</option>
+							<option value='2'>2</option>
+							<option value='3'>3</option>
+							<option value='4'>4</option>
+							<option value='5'>5</option>
+							<option value='6'>6</option>
+							<option value='7'>7</option>
+							<option value='8'>8</option>
+							<option value='9'>9</option>
+							<option value='10'>10</option>
+							<option value='11'>11</option>
+							<option value='12'>12</option>
+							<option value='13'>13</option>
+							<option value='14'>14</option>
+							<option value='15'>15</option>
+							<option value='16'>16</option>
+							<option value='17'>17</option>
+							<option value='18'>18</option>
+							<option value='19'>19</option>
+							<option value='20'>20</option>
+							<option value='21'>21</option>
+							<option value='22'>22</option>
+							<option value='23'>23</option>
+							<option value='24'>24</option>
+							<option value='25'>25</option>
+							<option value='26'>26</option>
+							<option value='27'>27</option>
+							<option value='28'>28</option>
+							<option value='29'>29</option>
+							<option value='30'>30</option>
+							<option value='31'>31</option>
+						</select>
+						<select id='date_m' name="month_id">
+							<option>Month</option>
+							<option value='January'>January</option>
+							<option value='February'>February</option>
+							<option value='March'>March</option>
+							<option value='April'>April</option>
+							<option value='May'>May</option>
+							<option value='June'>June</option>
+							<option value='July'>July</option>
+							<option value='August'>August</option>
+							<option value='September'>September</option>
+							<option value='October'>October</option>
+							<option value='November'>November</option>
+							<option value='December'>December</option>
+						</select>
+						<select id='date_y' name="year_id">
+							<option>Year</option>
+							<option value='2000'>2000</option>
+							<option value='1999'>1999</option>
+							<option value='1998'>1998</option>
+							<option value='1997'>1997</option>
+							<option value='1996'>1996</option>
+							<option value='1995'>1995</option>
+							<option value='1994'>1994</option>
+							<option value='1993'>1993</option>
+							<option value='1992'>1992</option>
+						</select>
+						<input type='hidden' id=''>
+						<table style='margin-left:130px;font-size:13px;'><tr><td><span id='male_sex' style='color:rgba(0,0,0,0.6);background-color:rgba(0,0,0,0);'>Male</span></td>
+						<td><div id='change_sex' style='width:45px;height:20px;'>
+							<div id='cursor_sex' style='width:20px;height:20px;'></div>
+							<input type='hidden' name='sex_reality' id="sex_reality" value="male">
+						</div>
+						</td><td><span style='color:rgba(0,0,0,0.6);' id='female_sex'>Female</span></td></tr></table>
+						<input type='file' name='avatar' style='border:0px;' id='file_ava'>
+						<input type='submit' name="singing" style='cursor:pointer;width: 100px;border: 0px;background-color: rgba(0,0,0,0.7);color: whitesmoke;margin-left: 10px;' value="Sign Up" id='butt'>
+		</div>
+</div>
+	</form>
+	<?php 
+		if($_POST['singing']==true){
+			include_once 'controller/common_class.php';
+			$a0 = $_POST['nick_in'];
+			$a1 = $_POST['name_in'];
+			$a2 = $_POST['sur_in'];
+			$a3 = $_POST['mail_in'];
+			$a10 = $_POST['pass_in'];
+			$a4 = $_POST['date_id'];
+			$a5 = $_POST['month_id'];
+			$a6 = $_POST['year_id'];
+			$a7 = $_POST['sex_reality'];
+			$name_new = "imag/prof/";
+			for ($i=0; $i < 15; $i++) {
+				$s = rand(0,1);
+				if($s == 0){
+					$ra = rand(48,57);				
+				}
+				else{
+					$ra = rand(97,122);			
+				}
+				$name_new .= chr($ra);
+			}
+			$name_new .= ".jpg";
+		if($_FILES['avatar']['name']!=""){
+			$upload = $uploaddir.basename($_FILES['avatar']['name']);
+			move_uploaded_file($_FILES['avatar']['tmp_name'],$name_new);
+		}
+		else{
+			if($_POST['sex_reality']=="male"){
+				$name_new = "imag/man.jpg";	
+			}else{
+				$name_new = "imag/women.jpg";
+			}
+		}
+			include_once "models/database_user_info.php";
+			add_kills($a0,$a1,$a2,$a3,$a10,$a4,$a5,$a6,$a7,$name_new);
+		}
+	?>
+</body>
+</html>

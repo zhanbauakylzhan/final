@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to country of coding</title>
+	<link rel="stylesheet" type="text/css" href="../styles/style2.css">
+	<script type="text/javascript" src='../scripts/jquery-2.1.4.min.js'></script>
+	<script type="text/javascript" src='../scripts/jsq3.js'></script>
+
+</head>
+<body>
+<div id='main_coin'>
+	<div id='registration'>
+		<ul>
+		<li style='border-bottom-left-radius:55px; background-color:rgba(100,100,100,0.3);' id='left_shet'>Login</li>
+		<li style='border-bottom-right-radius:55px;' id='right_shet'>Registration</li>
+		</ul>
+		<br>
+		<div id='pole_reg'>
+			<br>
+			<label>Nickname</label><br>
+			<input type='text' id='log_line' onkeypress="return shuw(event);" class='get_it'><br>
+			<label>Password</label><br>
+			<input type='password' id='log_pass' onkeypress="return shuw(event);" class='get_it'><br>
+			<input type="submit" id='clisk' onclick='shuw();' value='Log In'>
+		</div>
+		<div id='new_pole'>
+			<?php
+				require_once 'main_page.html';
+			?>
+		</div>
+	</div>
+</div>
+</body>
+</html>
